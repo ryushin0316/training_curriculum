@@ -10,6 +10,7 @@ class CalendarsController < ApplicationController
   def create
     Plan.create(plan_params)
     redirect_to action: :index
+    Post.create(content: params[:content])
   end
 
   private

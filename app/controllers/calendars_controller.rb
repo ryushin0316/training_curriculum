@@ -10,13 +10,13 @@ class CalendarsController < ApplicationController
   def create
     Plan.create(plan_params)
     redirect_to action: :index
-    Post.create(content: params[:content])
+    # Post.create(content: params[:content])
   end
 
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
   end
 
   def getWeek
